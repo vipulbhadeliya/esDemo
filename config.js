@@ -14,5 +14,12 @@ export default {
         idle: 10000
       }
     }
+  },
+  mongo: {
+    host: 'mongodb://localhost',
+    dbName: 'HelloTest'
+  },
+  tables: {
+    user: 'user'
   }
 };

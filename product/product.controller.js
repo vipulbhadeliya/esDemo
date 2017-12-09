@@ -1,6 +1,6 @@
 
 function list(req, res) {
-  res.send('Testinging done');
+  res.send('Testinging doneee');
 }
 
 export default { list };

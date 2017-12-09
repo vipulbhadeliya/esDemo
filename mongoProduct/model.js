@@ -19,7 +19,7 @@ product.add = (data) => {
     obj.isDeleted = false;
     db.addDocument(`${config.tables.user}`, obj).then((res) => {
         deffered.resolve(obj._id);
-    }).catch(err => deffered.reject(err));
+    });
     return deffered.promise;
 }
 /**
@@ -31,11 +31,11 @@ product.add = (data) => {
 product.get = (data) => {
     const deffered = Q.defer();
     let findObj = {
-        // _id: '1d1e2857-c87d-4f11-aef8-c7e37e13881d'
+        _id: '1d1e2857-c87d-4f11-aef8-c7e37e13881d'
     };
     db.getDocument(`${config.tables.user}`, findObj).then((res) => {
         deffered.resolve(res);
-    }).catch(err => deffered.reject(err));
+    });
     return deffered.promise;
 }
 /**
@@ -52,7 +52,7 @@ product.remove = (data) => {
     };
     db.deleteDocument(`${config.tables.user}`, removeObj).then((res) => {
         deffered.resolve(removeID);
-    }).catch(err => deffered.reject(err));
+    });
     return deffered.promise;
 }
 /**
@@ -66,7 +66,7 @@ product.list = (data) => {
     let findObj = {};
     db.getDocument(`${config.tables.user}`, findObj).then((res) => {
         deffered.resolve(res);
-    }).catch(err => deffered.reject(err));
+    });
     return deffered.promise;
 }
 export default product;
